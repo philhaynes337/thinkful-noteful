@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Note from '../Note/Note'
 import ApiContext from '../ApiContext'
 import { getNotesForFolder } from '../notes-helpers'
-import AddNote from '../AddNote/AddNote';
+//import AddNote from '../AddNote/AddNote';
 import PropTypes from 'prop-types';
 
 
@@ -20,9 +20,10 @@ showNote(url) {
 }
 
   render() {
-    const { folderId } = this.props.match.params
+    const { folderid } = this.props.match.params
     const { notes=[] } = this.context
-    const notesForFolder = getNotesForFolder(notes, folderId)
+    const notesForFolder = getNotesForFolder(notes, folderid)
+    //console.log('Notes for Folder:' + notesForFolder)
     return (
       <section className='NoteListMain'>
         <ul>
@@ -32,6 +33,7 @@ showNote(url) {
                 id={note.id}
                 name={note.name}
                 modified={note.modified}
+                history={this.props.history}
               />
             </li>
           )}

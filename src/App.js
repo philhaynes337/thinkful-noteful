@@ -45,6 +45,7 @@ class App extends Component {
         this.setState({
             notes: this.state.notes.filter(note => note.id !== noteId)
         });
+        
     };
 
 addFolder = folder => {
@@ -60,11 +61,13 @@ addNote = note => {
 };
 
 
+
     renderNavRoutes() {
+        
         return (
             <div>
                 <ErrorBoundary>
-                    {['/', '/folder/:folderId'].map(path => (
+                    {['/', '/folder/:folderid'].map(path => (
                         <Route
                             exact
                             key={path}
@@ -81,10 +84,11 @@ addNote = note => {
     }
 
     renderMainRoutes() {
+        
         return (
             <div>
                 <ErrorBoundary>
-                    {['/', '/folder/:folderId'].map(path => (
+                    {['/', '/folder/:folderid'].map(path => (
                         <Route
                             exact
                             key={path}
@@ -109,6 +113,8 @@ addNote = note => {
             addNote: this.addNote
         };
 
+        
+        
 
 
         return (

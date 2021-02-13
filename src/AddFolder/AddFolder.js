@@ -74,8 +74,8 @@ class AddFolder extends Component {
 	
 }
 
-AddFolder.propTypes = {
-		history: PropTypes.object
-	}
+// AddFolder.propTypes = {
+// 		history: PropTypes.string
+// 	}
 
 export default AddFolder

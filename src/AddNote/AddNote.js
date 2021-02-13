@@ -13,18 +13,18 @@ class AddNote extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		const { name, content, folderId } = e.target
+		const { name, content, folderid } = e.target
 
 		const notes = {
 
 			id: cuid(),
 			name: name.value,
 			modified: Date(),
-			folderId: folderId.value,
+			folderid: folderid.value,
 			content: content.value
 			
 		}
-		console.log(notes);
+		//console.log(notes);
 	
 		this.setState({ error: null })
 
@@ -49,7 +49,7 @@ class AddNote extends Component {
 			//console.log(this.context)
 			
 			name.value = ''
-			folderId.value = ''
+			folderid.value = ''
 			content.value = ''
 
 			this.context.addNote(data)
@@ -89,11 +89,11 @@ class AddNote extends Component {
 							<label htmlFor='folder'>
 								Folder: <br />
 							</label>
-							<select id='folderId' name='folderId' required>
+							<select id='folderid' name='folderid' required>
 
 								{folders.map(folder =>
 
-								<option value={folder.id} key={folder.id} id='folderId' name='folderId'>{folder.name}</option>
+								<option value={folder.id} key={folder.id} id='folderid' name='folderid'>{folder.name}</option>
 														
 								)}
 									
